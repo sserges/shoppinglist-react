@@ -10,8 +10,18 @@ class Form extends React.Component {
       <div>
         <h3>Ajouter des articles à acheter</h3>
         <form>
-          <input type="number" placeholder="quantité" />
-          <input type="text" placeholder="article" />
+          <input
+            type="number"
+            placeholder="quantité"
+            value={this.state.quantity}
+            onChange={event => this.setState({ quantity: event.target.value })}
+          />
+          <input
+            type="text"
+            placeholder="article"
+            value={this.state.name}
+            onChange={event => this.setState({ name: event.target.value })}
+          />
           <button type="submit">Ajouter</button>
         </form>
       </div>
