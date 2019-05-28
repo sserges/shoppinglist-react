@@ -23,7 +23,7 @@ class App extends React.Component {
           formTitle="Ajouter des articles à acheter"
           addArticle={this.addArticle}
         />
-        <ItemList />
+        <ItemList articles={this.state.articles} />
       </div>
     );
   }
