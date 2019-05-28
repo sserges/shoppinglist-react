@@ -5,11 +5,17 @@ class Form extends React.Component {
     name: "",
     quantity: 0
   };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div>
         <h3>Ajouter des articles à acheter</h3>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="number"
             placeholder="quantité"
