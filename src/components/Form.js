@@ -9,12 +9,13 @@ class Form extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state);
+    this.props.addArticle(this.state);
   };
 
   render() {
     return (
       <div>
-        <h3>Ajouter des articles à acheter</h3>
+        <h3>{this.props.formTitle}</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             type="number"
