@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../style.css";
+
 class Form extends React.Component {
   state = {
     name: "",
@@ -19,6 +21,7 @@ class Form extends React.Component {
         <h3>{this.props.formTitle}</h3>
         <form onSubmit={this.handleSubmit}>
           <input
+            className="quantity"
             type="number"
             placeholder="quantité"
             value={this.state.quantity}
@@ -30,7 +33,9 @@ class Form extends React.Component {
             value={this.state.name}
             onChange={event => this.setState({ name: event.target.value })}
           />
-          <button type="submit">Ajouter</button>
+          <button className="btn btn-primary" type="submit">
+            Ajouter
+          </button>
         </form>
       </div>
     );
