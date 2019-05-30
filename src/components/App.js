@@ -9,11 +9,15 @@ class App extends React.Component {
     articles: []
   };
 
+  // addArticle = article => {
+  //   let oldArticles = this.state.articles;
+  //   article.id = Date.now();
+  //   let newArticles = [...oldArticles, article];
+  //   this.setState({ articles: newArticles });
+  // };
+
   addArticle = article => {
-    let oldArticles = this.state.articles;
-    article.id = Date.now();
-    let newArticles = [...oldArticles, article];
-    this.setState({ articles: newArticles });
+    this.props.dispatch({ type: "ADD_ARTICLE", payload: article });
   };
 
   render() {
