@@ -1,14 +1,14 @@
 import React from "react";
 
+import Article from "./Article";
+
 const ItemList = props => {
   return (
     <div>
       <h3>Votre liste de courses</h3>
       <div>
         {props.articles.map(article => (
-          <div key={article.id}>
-            {article.quantity} {article.name}
-          </div>
+          <Article key={article.id} data={article} />
         ))}
       </div>
     </div>
