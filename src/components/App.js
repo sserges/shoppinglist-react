@@ -23,10 +23,17 @@ class App extends React.Component {
   }
 }
 
+const addArticleActionCreator = article => {
+  return {
+    type: "ADD_ARTICLE",
+    payload: article
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     addArticle: article => {
-      dispatch({ type: "ADD_ARTICLE", payload: article });
+      dispatch(addArticleActionCreator(article));
     }
   };
 };
