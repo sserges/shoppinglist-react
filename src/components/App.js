@@ -9,24 +9,13 @@ class App extends React.Component {
     articles: []
   };
 
-  // addArticle = article => {
-  //   let oldArticles = this.state.articles;
-  //   article.id = Date.now();
-  //   let newArticles = [...oldArticles, article];
-  //   this.setState({ articles: newArticles });
-  // };
-
-  addArticle = article => {
-    this.props.dispatch({ type: "ADD_ARTICLE", payload: article });
-  };
-
   render() {
     return (
       <div>
         <h3>List de courses</h3>
         <Form
           formTitle="Ajouter des articles à acheter"
-          addArticle={this.addArticle}
+          addArticle={this.props.addArticle}
         />
         <ItemList articles={this.props.articles} />
       </div>
@@ -34,10 +23,21 @@ class App extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    addArticle: article => {
+      dispatch({ type: "ADD_ARTICLE", payload: article });
+    }
+  };
+};
+
 const mapStateToProps = state => {
   return {
     articles: state.articles
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
