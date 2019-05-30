@@ -33,7 +33,7 @@ class Form extends React.Component {
             value={this.state.name}
             onChange={event => this.setState({ name: event.target.value })}
           />
-          <button className="btn btn-primary" type="submit">
+          <button className="btn btn-success" type="submit">
             Ajouter
           </button>
         </form>
