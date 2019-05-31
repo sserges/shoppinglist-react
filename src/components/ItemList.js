@@ -8,7 +8,11 @@ const ItemList = props => {
       <h3>Votre liste de courses</h3>
       <div>
         {props.articles.map(article => (
-          <Article key={article.id} data={article} />
+          <Article
+            key={article.id}
+            data={article}
+            editArticle={props.editArticle}
+          />
         ))}
       </div>
     </div>
